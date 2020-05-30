@@ -60,15 +60,15 @@
         </div>
       </div>
       <div class="form-group row">
-        <label for="city-input" class="col-2 col-form-label">Country</label>
-        <div class="col-10 dropdown" ngbDropdown myDrop="ngbDropdown">
-          <button type="button" class="btn btn-outline-primary" id="dropdownManual" name="country" ngbDropdownToggle>{{regModel.country}}</button>
-          <div ngbDropdownMenu aria-labelledby="dropdownManual">
-            <button type="button" class="dropdown-item" *ngFor="let country of countries" (click)="onChangeCountry(country)">{{country}}</button>
-          </div>
-        </div>
+        <mat-form-field appearance="fill">
+          <mat-label>Country</mat-label>
+          <mat-select>
+            <mat-option value="country" *ngFor="let country of countries" (click)="onChangeCountry(country)">{{country}}</mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
-      <button type="submit" class="btn btn-success">{{submitType}}</button>
+      <button type="submit" class="btn btn-success" style="margin-right: 10px;">{{submitType}}</button>
+
       <button type="submit" class="btn btn-primary" (click)="onCancel()">Cancel</button>
     </form>
   </div>
