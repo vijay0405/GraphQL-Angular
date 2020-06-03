@@ -19,7 +19,7 @@ class Registration {
   templateUrl: "./registrations.component.html",
   styleUrls: ["./registrations.component.css"]
 })
-export class RegistrationComponent implements OnInit {
+export class RegistrationsComponent implements OnInit {
   // It maintains list of Registrations
   registrations: Array<any> = [];
   // It maintains registration Model
@@ -125,7 +125,7 @@ export class RegistrationComponent implements OnInit {
         );
 
       // Push registration model object into registration list.
-      // this.registrations.push(this.regModel);
+      this.registrations.push(this.regModel);
     } else {
       const updateRegistration = gql`
         mutation updateRegistration(
